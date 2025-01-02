@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
-#include <time.h>
 
 #define HEIGHT 720
 #define WIDTH 1280
@@ -66,8 +65,6 @@ void main()
 
 	SDL_Window * window = SDL_CreateWindow("Circle", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0);
 	SDL_Surface * surface = SDL_GetWindowSurface(window);
-
-	srand(time(NULL));
 
 	Circle_t circle = {100, WIDTH/2, HEIGHT/2, 1, 1};
 
