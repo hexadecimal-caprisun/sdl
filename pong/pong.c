@@ -81,7 +81,7 @@ void main()
 
 	// Initialize SDL
 	SDL_Init(SDL_INIT_VIDEO);
-	SDL_Window * window = SDL_CreateWindow("Circle", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0);
+	SDL_Window * window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, 0);
 	SDL_Surface * surface = SDL_GetWindowSurface(window);
 
 	// Create necessary objects
