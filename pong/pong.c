@@ -42,9 +42,9 @@ void check_collision(Circle_t * circle, SDL_Rect * player, int * alive, int * sc
 
 	if(circle->x + circle->r >= WIDTH)  // Bot side
 	{
-		circle->v_x = rand() % 3;
+		circle->v_x = (rand() % 3) + 1;
 		circle->v_x *= -1;
-		circle->v_y = rand() % 3;
+		circle->v_y = (rand() % 1) + 1;
 		circle->v_y *= -1;
 	}
 
@@ -104,8 +104,8 @@ void main()
 
 	// Create necessary objects
 	Circle_t circle = {30, WIDTH/2, HEIGHT/2, (rand()%3)+1, (rand()%3)+1};
-	SDL_Rect player = {0, HEIGHT/2, 10, 75};
-	SDL_Rect bot = {WIDTH - 10, HEIGHT/2, 10, 75};
+	SDL_Rect player = {0, HEIGHT/2, 15, 90};
+	SDL_Rect bot = {WIDTH - 15, HEIGHT/2, 15, 90};
 //	SDL_Rect test = {0, 0, 100, 100};
 
 	//Draw objects to screen
@@ -133,6 +133,16 @@ void main()
 				case SDL_QUIT:
 					SDL_Log("Quitting...\n");
 					running = 0;
+					break;
+				case SDL_KEYDOWN:
+					if(e.key.keysym.sym == SDLK_w && player.y > 0)
+					{
+						player.y -= 10;
+					}
+					else if(e.key.keysym.sym == SDLK_s && player.y + player.h < HEIGHT)
+					{
+						player.y += 10;
+					}
 					break;
 			}
 		}
