@@ -12,7 +12,7 @@ This little simulation allowed me to implement movement of the ball, as well as 
 This is exactly what it sounds like, but with some small differences from actual pong. There is no way to win, only lose :(. But just most other things are there.
 
 ## aimtrain
-This isn't done yet, but its pretty much in the name. Will use random to spawn balls in random spots and check to see if the player clicks them. Nothing crazy.
+Spawns balls in random spots and check to see if the player clicks them. Nothing crazy.
 
 ## Honorable Mention
 Placecircle was exactly that, but I had already included the tooling for it in the template file, because that's where I figured it out, but it
