@@ -1,12 +1,13 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
+#include <unistd.h>
 
 #define HEIGHT 720
 #define WIDTH 1280
 #define WHITE 0xffffffff
 #define BLACK 0x00000000
-
 
 typedef struct
 {
@@ -57,9 +58,10 @@ void move_circle(SDL_Surface * surface, Circle_t * circle)
 	circle->y += circle->v_y;
 	check_collision(circle);
 	fill_circle(surface, circle);
+	usleep(500);
 }
 
-void main()
+int main()
 {
 	SDL_Init(SDL_INIT_VIDEO);
 
@@ -96,5 +98,5 @@ void main()
 	}
 
 	SDL_Quit();  // Close SDL/Subsystems
-	exit(0);  // Exit
+	return 0;
 }
